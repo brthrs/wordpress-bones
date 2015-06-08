@@ -1,25 +1,70 @@
-// Originated from http://logconsole.com/flex-box-alignment-sass-mixin/
+/*
+ * Flexbox Mixin
+ *
+ * Copyright 2015, Brthrs
+ * http://brth.rs
+ *
+ * Based on https://css-tricks.com/snippets/css/a-guide-to-flexbox/ and originated from http://logconsole.com/flex-box-alignment-sass-mixin.
+ */
 
-@mixin flexbox($pack, $align){
+@mixin flexbox($horizontal, $vertical) {
 
   display: -webkit-box;
-  -webkit-box-pack: $pack;
-  -webkit-box-align: $align;
+  -webkit-box-pack: $vertical;
+  -webkit-box-align: $vertical;
 
   display: -moz-box;
-  -moz-box-pack: $pack;
-  -moz-box-align: $align;
+  -moz-box-pack: $vertical;
+  -moz-box-align: $horizontal;
 
   display:-ms-flexbox;
-  -ms-flex-pack: $pack;
-  -ms-flex-align: $align;
+  -ms-flex-pack: $vertical;
+  -ms-flex-align: $horizontal;
 
   display: -webkit-flex;
-  -webkit-justify-content: $pack;
-  -webkit-align-items: $align;
+  -webkit-justify-content: $vertical;
+  -webkit-align-items: $horizontal;
 
   display: flex;
-  justify-content: $pack;
-  align-items: $align;
+  justify-content: $vertical;
+  align-items: $horizontal;
+
+}
+
+@mixin flexbox-vertical($vertical) {
+
+  display: -webkit-box;
+  -webkit-box-align: $vertical;
+
+  display: -moz-box;
+  -moz-box-align: $vertical;
+
+  display:-ms-flexbox;
+  -ms-flex-align: $vertical;
+
+  display: -webkit-flex;
+  -webkit-align-items: $vertical;
+
+  display: flex;
+  align-items: $vertical;
+
+}
+
+@mixin flexbox-horizontal($horizontal) {
+
+  display: -webkit-box;
+  -webkit-box-pack: $horizontal;
+
+  display: -moz-box;
+  -moz-box-pack: $horizontal;
+
+  display:-ms-flexbox;
+  -ms-flex-pack: $horizontal;
+
+  display: -webkit-flex;
+  -webkit-justify-content: $horizontal;
+
+  display: flex;
+  justify-content: $horizontal;
 
 }
